@@ -1,0 +1,181 @@
+{
+  "customers": {
+    "shape": [
+      1500,
+      5
+    ],
+    "columns": [
+      "customer_id",
+      "signup_date",
+      "acquisition_channel",
+      "region",
+      "churned"
+    ],
+    "schema": {
+      "customer_id": "int64",
+      "signup_date": "datetime64[us]",
+      "acquisition_channel": "str",
+      "region": "str",
+      "churned": "int64"
+    },
+    "missingness": {
+      "customer_id": 0,
+      "signup_date": 0,
+      "acquisition_channel": 0,
+      "region": 0,
+      "churned": 0
+    },
+    "churn_rate": 0.1347,
+    "churn_counts": {
+      "0": 1298,
+      "1": 202
+    },
+    "acquisition_channels": {
+      "organic": 609,
+      "paid_search": 431,
+      "referral": 295,
+      "social": 165
+    },
+    "regions": {
+      "east": 385,
+      "north": 381,
+      "west": 380,
+      "south": 354
+    }
+  },
+  "transactions": {
+    "shape": [
+      11742,
+      6
+    ],
+    "columns": [
+      "customer_id",
+      "txn_timestamp",
+      "category",
+      "channel",
+      "amount",
+      "is_returned"
+    ],
+    "schema": {
+      "customer_id": "int64",
+      "txn_timestamp": "datetime64[ns]",
+      "category": "str",
+      "channel": "str",
+      "amount": "float64",
+      "is_returned": "int64"
+    },
+    "missingness": {
+      "customer_id": 0,
+      "txn_timestamp": 0,
+      "category": 0,
+      "channel": 0,
+      "amount": 0,
+      "is_returned": 0
+    },
+    "amount_distribution": {
+      "count": 11742,
+      "mean": 49.7202,
+      "std": 55.2401,
+      "min": 3.0,
+      "q25": 18.36,
+      "median": 33.82,
+      "q75": 61.3875,
+      "max": 1684.21,
+      "skew": 6.1066
+    },
+    "amount_outliers_mad": 1612,
+    "date_range": [
+      "2024-02-29 18:44:13.034581037",
+      "2026-07-31 23:50:29.001075447"
+    ],
+    "category_counts": {
+      "home": 2008,
+      "grocery": 1979,
+      "sports": 1969,
+      "beauty": 1958,
+      "apparel": 1917,
+      "electronics": 1911
+    },
+    "channel_counts": {
+      "web": 5278,
+      "mobile_app": 4146,
+      "store": 2318
+    }
+  },
+  "monthly_agg": {
+    "shape": [
+      8086,
+      5
+    ],
+    "columns": [
+      "customer_id",
+      "txn_month",
+      "txn_count",
+      "total_amount",
+      "return_count"
+    ],
+    "schema": {
+      "customer_id": "int64",
+      "txn_month": "datetime64[us]",
+      "txn_count": "int64",
+      "total_amount": "float64",
+      "return_count": "int64"
+    },
+    "missingness": {
+      "customer_id": 0,
+      "txn_month": 0,
+      "txn_count": 0,
+      "total_amount": 0,
+      "return_count": 0
+    },
+    "txn_count_distribution": {
+      "count": 8086,
+      "mean": 1.4228,
+      "std": 0.7136,
+      "min": 1.0,
+      "q25": 1.0,
+      "median": 1.0,
+      "q75": 2.0,
+      "max": 6.0,
+      "skew": 1.9537
+    },
+    "total_amount_distribution": {
+      "count": 8086,
+      "mean": 70.7206,
+      "std": 74.7763,
+      "min": 3.0,
+      "q25": 24.28,
+      "median": 48.315,
+      "q75": 91.22,
+      "max": 1753.23,
+      "skew": 4.3269
+    },
+    "return_count_distribution": {
+      "count": 8086,
+      "mean": 0.071,
+      "std": 0.2611,
+      "min": 0.0,
+      "q25": 0.0,
+      "median": 0.0,
+      "q75": 0.0,
+      "max": 3.0,
+      "skew": 3.5698
+    }
+  },
+  "zero_activity": {
+    "count": 81,
+    "churned_count": 81,
+    "by_channel": {
+      "organic": 35,
+      "referral": 20,
+      "paid_search": 19,
+      "social": 7
+    },
+    "by_region": {
+      "east": 22,
+      "west": 20,
+      "south": 20,
+      "north": 19
+    }
+  }
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "driver": "acquisition_channel",
+    "test": "Chi-square",
+    "statistic": 5.8387,
+    "p_value": 0.119725,
+    "group_higher": "organic",
+    "effect_size": "Churn rates: {'paid_search': 0.10208816705336426, 'referral': 0.13898305084745763, 'social': 0.14545454545454545, 'organic': 0.15270935960591134}",
+    "error": null,
+    "note": null
+  },
+  {
+    "driver": "region",
+    "test": "Chi-square",
+    "statistic": 3.7571,
+    "p_value": 0.288915,
+    "group_higher": "east",
+    "effect_size": "Churn rates: {'north': 0.12335958005249344, 'west': 0.12368421052631579, 'south': 0.1271186440677966, 'east': 0.16363636363636364}",
+    "error": null,
+    "note": null
+  },
+  {
+    "driver": "txn_channel",
+    "test": "Chi-square",
+    "statistic": 551.4006,
+    "p_value": 0.0,
+    "group_higher": "none",
+    "effect_size": "Churn by preferred channel: {'web': 0.07803121248499399, 'mobile_app': 0.09131403118040089, 'store': 0.10948905109489052, 'none': 1.0}",
+    "error": null,
+    "note": null
+  },
+  {
+    "driver": "category",
+    "test": "Chi-square",
+    "statistic": 558.1593,
+    "p_value": 0.0,
+    "group_higher": "none",
+    "effect_size": "Churn by top category: {'grocery': 0.03982300884955752, 'home': 0.07582938388625593, 'sports': 0.07920792079207921, 'beauty': 0.0888030888030888, 'apparel': 0.09556313993174062, 'electronics': 0.12719298245614036, 'none': 1.0}",
+    "error": null,
+    "note": null
+  },
+  {
+    "driver": "avg_monthly_spend",
+    "test": "Mann-Whitney U",
+    "statistic": 101979.0,
+    "p_value": 0.0,
+    "group_higher": "not_churned",
+    "effect_size": "Mean churned=$40.23, not_churned=$57.19 (diff=$16.96)",
+    "error": null,
+    "note": null
+  },
+  {
+    "driver": "total_amount",
+    "test": "Mann-Whitney U",
+    "statistic": 98830.5,
+    "p_value": 0.0,
+    "group_higher": "not_churned",
+    "effect_size": "Mean churned=$188.73, not_churned=$286.91 (diff=$98.18)",
+    "error": null,
+    "note": null
+  },
+  {
+    "driver": "return_count",
+    "test": "Mann-Whitney U",
+    "statistic": 108409.5,
+    "p_value": 1e-06,
+    "group_higher": "not_churned",
+    "effect_size": "Mean churned=0.1980, not_churned=0.4245 (diff=0.2265)",
+    "error": null,
+    "note": null
+  },
+  {
+    "driver": "days_since_last_txn",
+    "test": "Mann-Whitney U",
+    "statistic": 262196.0,
+    "p_value": 0.0,
+    "group_higher": "churned",
+    "effect_size": "Median churned=168d, not_churned=23d (diff=145d)",
+    "error": null,
+    "note": "LEAKAGE CHECK \u2014 this variable is circular with the label definition"
+  }
+]
