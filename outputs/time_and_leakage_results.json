@@ -1,0 +1,43 @@
+{
+  "trend": {
+    "first_half_avg_txn_per_month": 85.9,
+    "second_half_avg_txn_per_month": 696.9,
+    "growth_ratio": 8.11,
+    "total_months": 30,
+    "date_range": [
+      "2024-02-01 00:00:00",
+      "2026-07-01 00:00:00"
+    ]
+  },
+  "multi_source": {
+    "total_rows_reaggregated": 8188,
+    "total_rows_agg": 8086,
+    "rows_only_in_reaggregated": 102,
+    "rows_only_in_agg": 0,
+    "rows_in_both": 8086,
+    "abs_diff_txn_count_sum": 127,
+    "abs_diff_total_amount_sum": 6805.25,
+    "abs_diff_return_count_sum": 5
+  },
+  "leakage": {
+    "as_of_date": "2026-08-01 00:00:00",
+    "leakage_cutoff": "2026-05-03 00:00:00",
+    "max_txn_timestamp_in_data": "2026-07-31 23:50:29.001075447",
+    "rows_after_as_of_date": 0,
+    "rows_within_trailing_90d_window": 3416,
+    "pass_as_of_check": true,
+    "note": "All valid features must use data before 2026-05-03. 3416 rows (29.1%) fall in the leakage window."
+  },
+  "leakage_drivers": {
+    "leakage_tainted_drivers": [
+      "days_since_last_txn",
+      "total_spend_trailing_90d",
+      "txn_count_trailing_90d",
+      "recency"
+    ],
+    "reasoning": "The churn label is defined as 'no purchase in the 90 days before the as-of date (2026-08-01). Any driver computed from transactions within this window is definitionally circular \u2014 it is restating the label, not predicting it. These drivers must be strictly excluded from modeling.",
+    "as_of_date": "2026-08-01 00:00:00",
+    "trailing_window_days": 90,
+    "leakage_cutoff": "2026-05-03 00:00:00"
+  }
+}
